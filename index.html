@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="scss/style.css">
+    <!-- js -->
+    <script src="js/anchors.js" defer></script>
+    <script src="js/lazyLoad.js" defer></script>
+</head>
+<body>
+    <!-- loading window -->
+    <div class="loading-window">
+        <div class="spinner-border" role="status">
+          </div>
+      </div>
+    
+      <script>
+          let loadingWindowItem = document.querySelector('.loading-window');
+          
+          window.addEventListener('load' , () => {
+              loadingWindowItem.style.opacity = 0;
+    
+              setTimeout(() => {
+                  loadingWindowItem.remove();
+              }, 300);
+              
+          });
+      </script>
+
+
+
+
+
+    <header class="header anchors-section" id="Home">
+        <nav class="navbar fixed-top navbar-expand-lg">
+            <div class="container navbar__content">
+              <a class="navbar-brand" href="#">agency</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="bar bar-1"></div>
+                <div class="bar bar-2"></div>
+                <div class="bar bar-3"></div>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav scrollspy-items">
+                  <li class="nav-item">
+                    <a class="nav-link scrollspy-item active" href="#Home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link scrollspy-item" href="#AboutUs">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link scrollspy-item" href="#OurServices">Our Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link scrollspy-item last-scrollspy-item" href="#Support">Support</a>
+                  </li>
+                </ul>
+
+                <div class="nav-contact">
+                    <a href="#Support" class="scrollspy-item">contact</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+        <div class="header__content container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 left lazy-load lazy-load_onload">
+                    <h1>Creative<br>Design Agency</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, ratione. Et, illum veniam!</p>
+                    <a href="#AboutUs" class="learn__more scrollspy-item btnAnim">LEARN MORE</a>
+                </div>
+
+                <div class="col-lg-7 col-md-12 right">
+                    <img src="img/header-right.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- burger -->
+        <script>
+            if (window.innerWidth <= 992) {
+            let menu = document.querySelector('.navbar-toggler');
+            let menuBox = document.querySelector('.navbar-collapse');
+            let menuBoxItems = document.querySelectorAll('.nav-link');
+    
+            menuBoxItems.forEach(current => {
+                current.addEventListener('click', () => {
+                    menuBox.classList.remove('show');
+                    document.body.classList.remove('overflow-hidden');
+                    menu.classList.toggle('_active');
+                })
+            });
+    
+            menu.onclick = menuOpen;
+    
+            function menuOpen(e) {
+                menu.disabled = true;
+                
+                menuBox.ontransitionend = () => {
+                    menu.disabled = false;
+                }
+    
+                e.preventDefault();
+                document.body.classList.toggle('overflow-hidden');
+                menu.classList.toggle('_active');
+            }
+            }
+        </script>
+
+        <!-- navbar adaptive -->
+        <script>
+            let navbarNav = document.querySelector('.navbar');
+    
+            if (window.innerWidth > 992) {
+            window.addEventListener('scroll' , (e) => {
+                if (pageYOffset > 50) {
+                navbarNav.classList.add('navbar-scrolled');
+                } else {
+                navbarNav.classList.remove('navbar-scrolled');
+                }
+            })
+            }
+        </script>
+
+        <!-- header content -->
+    </header>
+
+    <!-- main -->
+    <main>
+        <section class="about-us anchors-section" id="AboutUs">
+            <div class="container">
+                <div class="row about-us__content">
+                    <div class="col-md-6 col-sm-12 left">
+                        <img src="img/about-us-img.png" alt="">
+                    </div>
+
+                    <div class="col-md-5 col-sm-12 right lazy-load">
+                        <div class="section-title">
+                            <span>about us</span>
+                            <h2>Digital Agency<br> Providing various<br> Services</h2>
+                        </div>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ecessitatibus vitae consectetur officiis repellendus ipsa itaque nulla sint minus temporibus quis? Optio, fugiat.</p>
+
+                        <a href="#OurServices" class="learn__more scrollspy-item btnAnim">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services anchors-section" id="OurServices">
+            <div class="container">
+                <div class="row services__content">
+                    <div class="col-lg-5 col-md-12 left">
+                        <div class="section-title">
+                            <span>OUR SERVICES</span>
+                            <h2>We can take your<br>business to the<br>next level</h2>
+                        </div>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ecessitatibus vitae consectetur officiis repellendus ipsa itaque nulla sint minus temporibus quis? Optio, fugiat.</p>
+
+                        <a href="#Testimonials" class="learn__more scrollspy-item btnAnim">LEARN MORE</a>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12 right">
+                        <div class="services__card lazy-load">
+                            <img src="img/services-design.png" alt="">
+                            <div class="text">
+                                <h3>UI/UX design</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, quis?</p>
+                            </div>
+                        </div>
+                        <div class="services__card lazy-load" data-delay=".2s 768">
+                            <img src="img/services-branding.png" alt="">
+                            <div class="text">
+                                <h3>Branding</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, temporibus.</p>
+                            </div>
+                        </div>
+                        <div class="services__card lazy-load">
+                            <img src="img/services-games.png" alt="">
+                            <div class="text">
+                                <h3>Games</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, quo.</p>
+                            </div>
+                        </div>
+                        <div class="services__card lazy-load" data-delay=".2s 768">
+                            <img src="img/services-marketing.png" alt="">
+                            <div class="text">
+                                <h3>Marketing</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, quas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="Testimonials">
+            <div class="container">
+                <div class="row testimonials__title section-title">
+                    <span>TESTIMONIALS</span>
+                    <h2>What People say</h2>
+                </div>
+
+                <div class="row testimonials__slider lazy-load">
+                    <div id="testimonialsSlider" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio suscipit officiis esse deleniti doloribus nisi tempora? At praesentium nisi commodi?</p>
+                            <div class="author">
+                                <span>Zoltan Nemeth</span>
+                                <img src="img/testimonials-stars.png" alt="">
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio suscipit officiis esse deleniti doloribus nisi tempora? At praesentium nisi commodi?</p>
+                            <div class="author">
+                                <span>Zoltan Nemeth</span>
+                                <img src="img/testimonials-stars.png" alt="">
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio suscipit officiis esse deleniti doloribus nisi tempora? At praesentium nisi commodi?</p>
+                            <div class="author">
+                                <span>Zoltan Nemeth</span>
+                                <img src="img/testimonials-stars.png" alt="">
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="carousel-controls">
+                            <div class="prev" data-bs-target="#testimonialsSlider" data-bs-slide="prev">
+                                <img src="img/testimonials-prev.png" alt="">
+                            </div>
+                              <div class="next" data-bs-target="#testimonialsSlider" data-bs-slide="next">
+                                <img src="img/testimonials-prev.png" alt="" style="transform: rotate(180deg);">
+                              </div>
+                        </div>
+
+                        <div class="testimonials__slider-box-shadow first"></div>
+                         <div class="testimonials__slider-box-shadow second"></div>
+                      </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact anchors-section" id="Support">
+            <div class="container">
+                <div class="row contact__content">
+                    <div class="col-lg-5 col-md-12 left section-title contact__title lazy-load">
+                        <span>CONTACT US</span>
+                        <h2>Don't Hesitate to<br> Contact us for<br> any Informaion.</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam quos facilis accusantium distinctio quis libero quidem asperiores quae nihil voluptas.</p>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-12 right">
+                        <form action="" class="contact__form">
+                            <div class="contact__input">
+                                <input type="text" id="contact-name-input" class="iterable-field">
+                                <label for="contact-name-input">Full Name</label>
+                            </div>
+
+                            <div class="contact__input">
+                                <input type="email" id="contact-email-input" class="iterable-field">
+                                <label for="contact-email-input">Email</label>
+                            </div>
+
+                            <div class="contact__input">
+                                <textarea id="contact-textarea" class="iterable-field"></textarea>
+                                <label for="contact-textarea">Message</label>
+                            </div>
+
+                            <div class="contact__submit">
+                                <button type="submit" class="btnAnim">SUBMIT</button>
+                            </div>
+
+                            <div class="contact__form-box-shadow"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <h4>Message has been sent!</h4>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn modal-close__footer" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- contact script -->
+        <script>
+            let currentForm = document.querySelector('.contact__form');
+
+            // add key event on input
+            let items = document.querySelectorAll('.iterable-field');
+            items.forEach(el => {
+                
+                el.addEventListener('blur' , (e) => {
+                    if (el.value == '') {
+                        el.nextElementSibling.style.display = 'block';
+                    } else {
+                        el.nextElementSibling.style.display = 'none';
+                    }
+                });
+            });
+            
+          
+            currentForm.onsubmit = (e) => {
+              e.preventDefault();
+          
+              // check inputs
+              let formElems = document.querySelectorAll('.iterable-field');
+              let result = [];
+              let errors = 0;
+          
+              for (let item of formElems) {
+                if (item.type == 'email' && !item.value.includes('@')) {
+                  item.style.borderColor = 'rgba(255,57,70,.4)';
+                  errors++;
+                } else if (item.value == '') {
+                  item.style.borderColor = 'rgba(255,57,70,.4)';
+                  errors++;
+                } else {
+                    item.style.borderColor = ''
+                }
+              }
+          
+              if (errors != 0) return false;
+          
+              // add answers to array
+              for (let item of formElems) {
+                result.push(item.value)
+              }
+          
+               // reset values
+               formElems.forEach((el,i) => {
+                  el.value = '';
+                  el.style.borderColor = '';
+                  items[i].nextElementSibling.style.display = ''
+                })
+          
+              console.log(result);
+          
+              // show modal
+              var myModal = new bootstrap.Modal(document.getElementById('contactModal'), {
+                keyboard: false
+              })
+          
+              myModal.show();
+            }
+          </script>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer__content container">
+            <a href="#" class="footer__a">agency</a>
+
+            <div class="footer__links">
+                <a href="#Home" class="scrollspy-item">Home</a>
+                <a href="#AboutUs" class="scrollspy-item">About Us</a>
+                <a href="#OurServices" class="scrollspy-item">Our Services</a>
+                <a href="#Support" class="scrollspy-item">Support</a>
+            </div>
+
+            <div class="footer__social">
+                <a href="#" class="footer__social-item">
+                    f
+                </a>
+                <a href="#" class="footer__social-item">
+                    <img src="img/footer-social2.png" alt="">
+                </a>
+                <a href="#" class="footer__social-item">
+                    <img src="img/footer-social3.png" alt="">
+                </a>
+                <a href="#" class="footer__social-item">
+                    in
+                </a>
+            </div>
+        </div>
+
+        <div class="footer__copy">
+            <span>Copyright &copy; Chirag Bactor 2020</span>
+        </div>
+    </footer>
+</body>
+</html>
