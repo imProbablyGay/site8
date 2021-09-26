@@ -413,8 +413,8 @@ body {
 }
 
 .services__card:nth-child(2).lazy-load, .services__card:nth-child(4).lazy-load {
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
+  -webkit-transform: scale(0.5) !important;
+          transform: scale(0.5) !important;
   opacity: 0;
 }
 
@@ -1009,6 +1009,9 @@ body {
         -ms-flex-align: center;
             align-items: center;
     padding: 30px 30px 10px;
+    -webkit-transform: translateY(0px) scale(0.5);
+            transform: translateY(0px) scale(0.5);
+    margin-top: 0px !important;
   }
   .services__card p {
     line-height: 1.4;
@@ -1018,12 +1021,9 @@ body {
     margin-right: 20px;
     height: 50px;
   }
-  .services__card:nth-child(2), .services__card:nth-child(4) {
-    margin-top: 0px;
-  }
-  .services__card:nth-child(2).lazy-load_active, .services__card:nth-child(4).lazy-load_active {
-    -webkit-transform: scale(1) !important;
-            transform: scale(1) !important;
+  .services__card.lazy-load_active {
+    -webkit-transform: scale(1) translateY(0) !important;
+            transform: scale(1) translateY(0) !important;
     opacity: 1;
   }
   .testimonials .carousel-item {
