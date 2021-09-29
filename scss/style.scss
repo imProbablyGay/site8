@@ -613,7 +613,7 @@ $textGrey: #e6e0f9;
 
 
 
-@media screen and (max-width:1530px) {
+@media screen and (max-width:1530px), (max-height:850px) {
     .header {
         background: linear-gradient(left bottom, rgb(124, 78, 211), $violet);
 

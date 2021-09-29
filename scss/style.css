@@ -797,7 +797,7 @@ body {
   background: #00dadc;
 }
 
-@media screen and (max-width: 1530px) {
+@media screen and (max-width: 1530px), (max-height: 850px) {
   .header {
     background: -webkit-gradient(linear, left bottom, right top, from(#7c4ed3), to(#6426dd));
     background: linear-gradient(left bottom, #7c4ed3, #6426dd);
